@@ -306,6 +306,10 @@ button {
   overflow:hidden;
 }
 
+#testimonials:hover .ind-testimonial {
+  animation-play-state: paused;
+}
+
 .ind-testimonial {
   overflow: hidden;
   line-height: 1.5;
