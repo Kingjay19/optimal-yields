@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #1e5f00;
+}
+
+ul {
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+#nav-items{ 
+    display: none;
+    position: absolute;
+    right: 15px;
+    z-index: 2;
+    background-color: #1e5f00;
+    list-style: none;
+}
+
+.items {
+    padding: 10px 20px;
+}
+.items {
+  color: #fff;
+}
+.items:hover {
+    background-color: #38b000;
+}
+
+
+/* CHECKBOX */
+.burger {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    cursor: pointer;
+    transition: 300ms;
+    border-radius: 10px;
+  }
+  .burger input[type="checkbox"] {
+    appearance: none;
+    transition: 300ms;
+  }
+  
+  .burger::before,
+  .burger::after {
+    content: "";
+    transition: 300ms;
+    transform-origin: center center;
+  }
+  
+  .burger::before {
+    transform: translateY(8px);
+  }
+  .burger::after {
+    transform: translateY(-8px);
+  }
+  .burger .line,
+  .burger::before,
+  .burger::after {
+    width: 25px;
+    height: 2.1px;
+    display: block;
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+  }
+  
+  .burger .line:checked {
+    width: 0;
+    transition-delay: 100ms;
+  }
+  .burger:has(.line:checked)::before {
+    animation: animation1 400ms ease-out 0s 1 both;
+  }
+  .burger:has(.line:checked)::after {
+    animation: animation2 400ms ease-out 0s 1 both;
+  }
+  
+  .burger:hover {
+    background: #38b000;
+    border-radius: 50%;
+  }
+  
+  .burger:hover .line,
+  .burger:hover::before,
+  .burger:hover::after {
+    background: #e8e8e8;
+  }
+  
+  .burger:active {
+    scale: 0.95;
+  }
+  @keyframes animation1 {
+    0% {
+      transform: translateY(8px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(45deg);
+    }
+  }
+  @keyframes animation2 {
+    0% {
+      transform: translateY(-8px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    100% {
+      transform: translateY(0px) rotate(-45deg);
+    }
+  }
+  
+
+
+/* SLIDESHOW */
+/* Slideshow container */
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+  }
+  
+  /* Caption text */
+  .text {
+    background-color: #f2f2f288;
+    color: #000;
+    font-size: 200%;
+    padding: 15px;
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    margin: auto 0;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+/* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  /* On smaller screens, decrease text size */
+  @media only screen and (max-width: 300px) {
+    .text {font-size: 11px}
+  }
+
+  .sign-up {
+    color: #fff;
+    background-color: #1e5f00;
+    font-size: 50%;
+    padding: 7px 10px;
+    margin: 10px;
+    border-radius: 6px;
+  }
+
+  .sign-up:hover {
+    background-color: #38b000;
+  }
+
+
+/* ABOUT SECTION */
+  .about-section {
+    margin: 15% 20%;
+}
+
+/* CHOOSE US */
+.choose {
+  padding: 20px;
+}
+
+.header1 {
+  color: #1e5f00;
+  text-align: center;
+}
+
+.choose-list {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+@media screen and (max-width: 720px) {
+  .choose-list {
+    flex-wrap: wrap;
+  }
+}
+
+.list {
+  margin: 20px;
+  padding: 50px 15px;
+  background-color: #1e5f00;
+  color: white;
+  line-height: 2;
+  animation: fade 3s ease;
+  animation-timeline: view();
+  animation-range: entry 0% cover 60%;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* INVEST SECTION*/
+.invest {
+  padding: 100px 40px;
+}
+
+.invest > h2 {
+  text-align: center;
+}
+
+.invest-options{
+  margin: 5% 8%;
+  background-color: #e8e8e8;
+  padding: 5%;
+}
+
+.invest-options h2 {
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+}
+
+.span-sec {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding-bottom: 10px ;
+}
+@media screen and (max-width: 720px) {
+  .span-sec {
+    flex-wrap: wrap;
+    font-size: 0.8em;
+  }
+}
+
+.span-sec div{
+  padding: 5px 25px;
+  text-align: center;
+}
+
+span {
+  font-size: 2em;
+  color: #1e5f00;
+  font-weight: bolder;
+}
+
+.invest-list {
+  padding: 2% 5%;
+  line-height: 1.5;
+}
+
+button {
+  padding: 10px;
+  background-color: #1e5f00;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+/* TESTIMONIALS */
+#testimonials {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  overflow:hidden;
+}
+
+.ind-testimonial {
+  overflow: hidden;
+  line-height: 1.5;
+  width: 350px;
+  margin: 15px 40px;
+  padding: 20px;
+  border-radius: 15px;
+  animation: 10s slide infinite linear;
+  box-shadow: 15px 8px 15px -5px #8d8d8d;
+}
+
+.icon-img {
+  display: block;
+  margin: 10px auto;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to  {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* BENEFITS AND OPPORTUNITIES */
+.opportunities {
+  padding: 10% 15%;
+  line-height: 1.5;
+}
+
+.opp-list {
+  padding: 0 3%;
+}
